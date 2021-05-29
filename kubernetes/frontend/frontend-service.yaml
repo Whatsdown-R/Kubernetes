@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    whatsdown.service: whatsdownfrontend
+  name: whatsdownfrontend
+  namespace: whatsdown
+spec:
+  type: ClusterIP
+  ports:
+  - name: "http"
+    port: 4200
+    targetPort: 4200
+  selector:
+    whatsdown.service: whatsdownfrontend
+status:
+  loadBalancer: {}

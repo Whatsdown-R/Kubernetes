@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    whatsdown.service: whatsdownfrontend
+  name: whatsdownfrontend
+  namespace: whatsdown
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      whatsdown.service: whatsdownfrontend
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        whatsdown.service: whatsdownfrontend
+    spec:
+      containers:
+      - image: noonespecial123/whatsdown-frontend:latest
+        imagePullPolicy: Always
+        name: whatsdown-frontend
+        ports:
+        - containerPort: 80
+        - containerPort: 443
+        resources:
+          limits:
+            memory: "1024Mi"
+            cpu: "500m"
+          requests:
+            memory: "256Mi"
+            cpu: "100m"
+      hostname: whatsdownfrontend
+      restartPolicy: Always
+status: {}

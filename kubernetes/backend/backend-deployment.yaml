@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    whatsdown.service: whatsdownbackend
+  name: whatsdownbackend
+  namespace: whatsdown
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      whatsdown.service: whatsdownbackend
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        whatsdown.service: whatsdownbackend
+    spec:
+      containers:
+      - image: noonespecial123/whatsdown_gateway:latest
+        imagePullPolicy: Always
+        env:
+        - name: ASPNETCORE_ENVIRONMENT
+          value: Production
+        - name: ASPNETCORE_URLS
+          value: http://+:80
+        name: whatsdown-backend
+        ports:
+        - containerPort: 80
+        - containerPort: 443
+        resources:
+          limits:
+            memory: "1024Mi"
+            cpu: "200m"
+          requests:
+            memory: "512Mi"
+            cpu: "100m"
+      hostname: whatsdownbackend
+      restartPolicy: Always
+      serviceAccountName: ""
+status: {}
