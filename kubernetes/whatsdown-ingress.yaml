@@ -1,0 +1,31 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: whatsdown-ingress
+  namespace: whatsdown
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+#temp for debug only:
+  - host: authservice.whatsdown.nl
+    http:
+      paths:
+      - path: / 
+        pathType: Prefix
+        backend:
+          service:
+            name: authservice
+            port: 
+              number: 6001
+  - host: locationservice.whatsdown.nl
+    http:
+      paths:
+      - path: / 
+        pathType: Prefix
+        backend:
+          service:
+            name: locationservice
+            port: 
+              number: 6031  
+              
