@@ -7,14 +7,14 @@ metadata:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-  - host: frontendservice.whatsdown.nl
+  - host: whatsdownfrontend.whatsdown.nl
     http:
       paths:
       - path: / 
         pathType: Prefix
         backend:
           service:
-            name: frontendservice
+            name: whatsdownfrontend
             port: 
               number: 4200  
 #temp for debug only:
