@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    whatsdown.service: locationservice
+  name: locationservice
+  namespace: whatsdown
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      whatsdown.service: locationservice
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        whatsdown.service: locationservice
+    spec:
+      containers:
+      - image: noonespecial123/whatsdown_location_service:latest
+        imagePullPolicy: Always
+        env:
+        - name: ASPNETCORE_URLS
+          value: http://+:80       
+        name: whatsdown-locationservice
+        ports:
+        - containerPort: 80
+        - containerPort: 443
+        resources:
+          limits:
+            memory: "1024Mi"
+            cpu: "1500m"
+      hostname: locationservice
+      restartPolicy: Always
+status: {}
