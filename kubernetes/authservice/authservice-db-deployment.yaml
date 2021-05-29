@@ -27,10 +27,6 @@ spec:
         args:
         - --default-authentication-plugin=mysql_native_password
         env:
-        - name: MYSQL_DATABASE
-          value: TestDB
-        - name: MYSQL_PASS
-          value: password
         - name: MYSQL_PASS
           value: password
         - name: MYSQL_ROOT_PASSWORD
