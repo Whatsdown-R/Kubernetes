@@ -11,7 +11,7 @@ metadata:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-  - host: dashboard.letschess.nl
+  - host: dashboard.whatsdown.nl
     http:
       paths:
       - path: / 
