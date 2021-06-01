@@ -16,7 +16,7 @@ spec:
           service:
             name: whatsdownfrontend
             port: 
-              number: 4200  
+              number: 80  
 #temp for debug only:
   # - host: authservice.whatsdown.nl
   #   http:
