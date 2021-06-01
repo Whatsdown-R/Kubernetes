@@ -18,16 +18,16 @@ spec:
             port: 
               number: 4200  
 #temp for debug only:
-  # - host: authservice.whatsdown.nl
-  #   http:
-  #     paths:
-  #     - path: / 
-  #       pathType: Prefix
-  #       backend:
-  #         service:
-  #           name: authservice
-  #           port: 
-  #             number: 6001
+  - host: authservice.whatsdown.nl
+    http:
+      paths:
+      - path: / 
+        pathType: Prefix
+        backend:
+          service:
+            name: authservice
+            port: 
+              number: 6001
   - host: locationservice.whatsdown.nl
     http:
       paths:
