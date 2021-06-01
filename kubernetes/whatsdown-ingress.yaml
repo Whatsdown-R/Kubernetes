@@ -38,16 +38,16 @@ spec:
   #           name: locationservice
   #           port: 
   #             number: 6031  
-  # - host: backendservice.whatsdown.nl
-  #   http:
-  #     paths:
-  #     - path: / 
-  #       pathType: Prefix
-  #       backend:
-  #         service:
-  #           name: backendservice
-  #           port: 
-  #             number: 6011  
+  - host: api.whatsdown.nl
+    http:
+      paths:
+      - path: / 
+        pathType: Prefix
+        backend:
+          service:
+            name: backendservice
+            port: 
+              number: 6011  
 
   # - host: messageservice.whatsdown.nl
   #   http:
