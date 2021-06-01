@@ -27,8 +27,6 @@ spec:
         args:
         - --default-authentication-plugin=mysql_native_password
         env:
-        - name: MYSQL_PASS
-          value: password
         - name: MYSQL_ROOT_PASSWORD
           value: password
         name: authservice-db
@@ -43,10 +41,10 @@ spec:
             cpu: "100m"
         volumeMounts:
         - mountPath: /var/lib/mysql
-          name: authservice-db-data
+          name: authservice-persistant-storage
       hostname: authservice-db
       restartPolicy: Always
       volumes:
-      - name: authservice-db-data
+      - name: authservice-persistant-storage
         persistentVolumeClaim:
-          claimName: authservice-db-data
+          claimName: authservice-pv-claim
