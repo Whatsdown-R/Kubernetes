@@ -10,7 +10,7 @@ spec:
   ports:
   - name: "http"
     port: 4200
-    targetPort: 4200
+    targetPort: 80
   selector:
     whatsdown.service: whatsdownfrontend
 status:
