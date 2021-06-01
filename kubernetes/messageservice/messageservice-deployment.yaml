@@ -18,7 +18,7 @@ spec:
         whatsdown.service: messageservice
     spec:
       containers:
-      - image: noonespecial123 / whatsdown_auth:latest
+      - image: noonespecial123/whatsdown_auth:latest
         imagePullPolicy: Always
         env:
         - name: ASPNETCORE_ENVIRONMENT
