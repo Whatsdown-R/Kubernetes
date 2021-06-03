@@ -10,7 +10,7 @@ spec:
   ports:
   - name: "messageservice-db"
     protocol: TCP
-    port: 3306
-    targetPort: 3306
+    port: 3308
+    targetPort: 3308
   selector:
     whatsdown.service: messageservice-db

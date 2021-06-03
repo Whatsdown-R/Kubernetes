@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    whatsdown.service: profileservice
+
+  name: profileservice
+  namespace: whatsdown
+spec:
+  type: ClusterIP
+  ports:
+  - name: "http"
+    port: 6051
+    targetPort: 80
+    protocol: TCP
+  - name: "https"
+    port: 6052
+    targetPort: 443
+    protocol: TCP
+  selector:
+    whatsdown.service: profileservice
+status:
+  loadBalancer: {}

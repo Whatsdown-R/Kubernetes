@@ -2,23 +2,23 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    whatsdown.service: messageservice-db
-    app: messageservice
+    whatsdown.service: profileservice-db
+    app: profileservice
     version: "1.0"
-  name: messageservice-db
+  name: profileservice-db
   namespace: whatsdown
 spec:
   replicas: 1
   selector:
     matchLabels:
-      whatsdown.service: messageservice-db
+      whatsdown.service: profileservice-db
   strategy:
     type: Recreate
   template:
     metadata:
       labels:
-        whatsdown.service: messageservice-db
-        app: messageservice
+        whatsdown.service: profileservice-db
+        app: profileservice
         version: "1.0"
     spec:
       containers:
@@ -29,9 +29,9 @@ spec:
         env:
         - name: MYSQL_ROOT_PASSWORD
           value: password
-        name: messageservice-db
+        name: profileservice-db
         ports:
-        - containerPort: 3308
+        - containerPort: 3309
         resources:
           limits:
             memory: "512Mi"
@@ -41,10 +41,10 @@ spec:
             cpu: "100m"
         volumeMounts:
         - mountPath: /var/lib/mysql
-          name: messageservice-persistent-storage
-      hostname: messageservice-db
+          name: profileservice-persistent-storage
+      hostname: profileservice-db
       restartPolicy: Always
       volumes:
-      - name: messageservice-persistent-storage
+      - name: profileservice-persistent-storage
         persistentVolumeClaim:
-          claimName: messageservice-pv-claim
+          claimName: profileservice-pv-claim

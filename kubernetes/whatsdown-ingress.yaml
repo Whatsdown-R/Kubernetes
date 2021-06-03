@@ -59,14 +59,24 @@ spec:
             port: 
               number: 6041  
 
-  # - host: messageservice.whatsdown.nl
-  #   http:
-  #     paths:
-  #     - path: / 
-  #       pathType: Prefix
-  #       backend:
-  #         service:
-  #           name: messageservice
-  #           port: 
-  #             number: 6021  
+  - host: messageservice.whatsdown.nl
+    http:
+      paths:
+      - path: / 
+        pathType: Prefix
+        backend:
+          service:
+            name: messageservice
+            port: 
+              number: 6021  
+  - host: profileservice.whatsdown.nl
+    http:
+      paths:
+      - path: / 
+        pathType: Prefix
+        backend:
+          service:
+            name: profileservice
+            port: 
+              number: 6051  
               
