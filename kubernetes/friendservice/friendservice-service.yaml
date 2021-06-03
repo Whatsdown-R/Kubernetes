@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    whatsdown.service: friendservice
+
+  name: friendservice
+  namespace: whatsdown
+spec:
+  type: ClusterIP
+  ports:
+  - name: "http"
+    port: 6041
+    targetPort: 80
+    protocol: TCP
+  - name: "https"
+    port: 6042
+    targetPort: 443
+    protocol: TCP
+  selector:
+    whatsdown.service: friendservice
+status:
+  loadBalancer: {}

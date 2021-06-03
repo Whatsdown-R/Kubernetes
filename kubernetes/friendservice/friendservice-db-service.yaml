@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    whatsdown.service: friendservice-db
+  name: friendservice-db
+  namespace: whatsdown
+spec:
+  type: ClusterIP
+  ports:
+  - name: "friendservice-db"
+    protocol: TCP
+    port: 3307
+    targetPort: 3307
+  selector:
+    whatsdown.service: friendservice-db
