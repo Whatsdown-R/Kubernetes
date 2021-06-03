@@ -34,7 +34,7 @@ spec:
             memory: "1024Mi"
             cpu: "500m"
           requests:
-            memory: "512Mi"
+            memory: "256Mi"
             cpu: "100m"
       hostname: messageservice
       restartPolicy: Always
