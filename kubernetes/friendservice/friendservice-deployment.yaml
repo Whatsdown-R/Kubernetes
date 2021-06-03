@@ -18,7 +18,7 @@ spec:
         whatsdown.service: friendservice
     spec:
       containers:
-      - image: noonespecial123/whatsdown_auth:latest
+      - image: noonespecial123/whatsdown_friend_service:latest
         imagePullPolicy: Always
         env:
         - name: ASPNETCORE_ENVIRONMENT
