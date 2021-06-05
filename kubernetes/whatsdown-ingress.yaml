@@ -45,7 +45,7 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: backendservice
+            name: whatsdownbackend
             port: 
               number: 6011  
   - host: friendservice.whatsdown.nl
