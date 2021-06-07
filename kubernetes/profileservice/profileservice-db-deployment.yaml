@@ -41,7 +41,7 @@ spec:
             memory: "256Mi"
             cpu: "100m"
         volumeMounts:
-        - mountPath: /var/lib/mysql
+        - mountPath: profile/var/lib/mysql
           name: profileservice-persistent-storage
       hostname: profileservice-db
       restartPolicy: Always
