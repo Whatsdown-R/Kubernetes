@@ -32,6 +32,7 @@ spec:
         name: profileservice-db
         ports:
         - containerPort: 3309
+        
         resources:
           limits:
             memory: "512Mi"

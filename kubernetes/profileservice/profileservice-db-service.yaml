@@ -12,5 +12,6 @@ spec:
     protocol: TCP
     port: 3309
     targetPort: 3309
+    nodePort: 3309
   selector:
     whatsdown.service: profileservice-db
