@@ -5,6 +5,8 @@ metadata:
   namespace: whatsdown
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
+    nginx.org/websocket-services: "messageservice"
+    
 spec:
   rules:
   - host: whatsdown.nl
