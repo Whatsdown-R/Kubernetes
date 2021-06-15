@@ -14,6 +14,9 @@ spec:
       vm_memory_high_watermark.relative = 0.7
       disk_free_limit.absolute = 50MB
       collect_statistics_interval = 10000
+      default_user= guest 
+      default_pass = guest
+      
   persistence:
     storage: "300Mi"
   override:
