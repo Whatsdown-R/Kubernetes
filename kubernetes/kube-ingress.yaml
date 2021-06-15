@@ -9,8 +9,6 @@ metadata:
     nginx.ingress.kubernetes.io/configuration-snippet: |-
       proxy_ssl_server_name on;
       proxy_ssl_name $host;
-    certmanager.k8s.io/issuer: "letsencrypt-prod"
-    certmanager.k8s.io/acme-challenge-type: http01
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   ingressClassName: public
