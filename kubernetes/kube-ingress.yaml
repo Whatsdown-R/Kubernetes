@@ -13,6 +13,7 @@ metadata:
     certmanager.k8s.io/acme-challenge-type: http01
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
+  ingressClassName: public
   rules:
   - host: dashboard.whatsdown.nl
     http:
